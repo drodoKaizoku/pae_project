@@ -1,0 +1,108 @@
+<div id="view-dashboard-client" class="container-fluid view">
+    <div class="row">
+        <div class="container col-3 border py-1">
+            <h3 class="py-1 mb-0">My Quotes</h3>
+        </div>
+        <div class="container-fluid col-9 border py-1">
+            <form class="form-inline" id="search-quote-dashboard-client">
+                <h3 class="mb-0 mr-1">Filters:</h3>
+                <div class="form-group mx-1">
+                    <input type="date" id="client-date-quote" class="form-control" />
+                </div>
+                <div class="form-group mx-1">
+                    <input type="text" id="client-quote-min-price" class="form-control" placeholder="Min Price" />
+                </div>
+                <div class="form-group mx-1">
+                    <input type="text" id="client-quote-max-price" class="form-control" placeholder="Max Price" />
+                </div>
+                <div class="form-group mx-1">
+                    <button type="button" class="btn btn-default border dropdown-toggle" data-toggle="dropdown">
+                        <span>Project Types<span class="caret"></span></span>
+                    </button>
+                    <ul class="dropdown-menu" id="menu-types">
+                       
+                    </ul>
+                </div>
+                <button type="submit" class="btn btn-secondary mx-1">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container-fluid col-3 border px-0 result-list rtl" id="result-list-client">
+            
+        
+        </div>
+        <div class="container-fluid col-3 z-back"></div>
+        <div class="container-fluid col-9 border-bottom-0 h-auto details"  id="details-client-quote">
+            <div class="row my-3">
+                <div class="container-fluid col-10">
+                    <h2><u>Selected Quote's Details:</u></h2>
+                </div>
+                <div class="container-fluid col-2 text-right">
+                    <span class="font-weight-bold" id="details-client-quote-id"></span>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-client-quote-date"></span>
+                </div>
+                <div class="container col-6 text-center" >
+                    <span class="font-weight-bold" id="details-client-quote-date-start"></span>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-client-quote-duration"></span>
+                </div>
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold " id="details-client-quote-total"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-client-quote-type"><u>Quote types:</u></span>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-client-quote-state"></span>
+                </div>
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" >Favorite Picture:</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container col-8"></div>
+                <div class="container col-4">
+                    <img src="" class="mw-150px" id="details-client-quote-favorite-picture" />
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="container col-6 text-center">
+                    <div class="row my-3">
+                        <div class="container text-center">
+                            <span class="font-weight-bold"><u>Pictures Before:</u></span>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="container mx-5" id="details-client-quote-pictures-before">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="container col-6 text-center">
+                    <div class="row my-3">
+                        <div class="container text-center">
+                            <span class="font-weight-bold"><u>Pictures After:</u></span>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="container mx-5" id="details-client-quote-pictures-after">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

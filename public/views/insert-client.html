@@ -1,0 +1,61 @@
+<!--Insert Client-->
+<div id="view-insert-client" class="container col-sm-9 col-md-7 col-lg-5 col-xl-4 view">
+    <div class="card">
+        <article class="card-body">
+            <h4 class="card-title text-center text-dark">Create new client</h4>
+            <hr />
+            <div class="alert alert-danger notification" role="alert" id="error-insert-client"></div>
+            <div class="alert alert-success notification" role="alert" id="success-insert-client"></div>
+            <form id="form-insert-client">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="client-firstname">First name</label>
+                        <input id="client-firstname" type="text" class="form-control" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="client-lastname">Last name</label>
+                        <input id="client-lastname" type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="client-email">Email</label>
+                        <input type="email" class="form-control" id="client-email" />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="client-phone">Phone number</label>
+                        <input type="tel" class="form-control" id="client-phone" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-10">
+                        <label for="street-name">Street name</label>
+                        <input type="text" class="form-control" id="street-name" />
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="street-number">Number</label>
+                        <input type="text" class="form-control" id="street-number" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="client-city">City</label>
+                        <input type="text" class="form-control" id="client-city" />
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="post-code">Post code</label>
+                        <input type="text" class="form-control" id="post-code" />
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="post-box">Post box</label>
+                        <input type="text" class="form-control" id="post-box" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <button type="submit" class="btn btn-secondary btn-block">Add client</button>
+                    </div>
+                </div>
+            </form>
+        </article>
+    </div>
+</div>

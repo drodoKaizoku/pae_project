@@ -1,0 +1,292 @@
+<div id="view-dashboard-worker" class="container-fluid view">
+    <div class="row">
+        <div class="container col-3 border pt-1 pb-0 px-0">
+            <!-- TABS ( CLIENTS / USERS / QUOTES) -->
+            <div class="btn-group mb-1 d-flex" role="group">
+                <button type="button" class="btn btn-primary w-100 py-2 tab" id="btn-tab-clients">CLIENTS</button>
+                <button type="button" class="btn btn-secondary w-100 py-2 tab" id="btn-tab-users">USERS</button>
+                <button type="button" class="btn btn-secondary w-100 py-2 tab" id="btn-tab-quotes">QUOTES</button>
+            </div>
+        </div>
+        <div class="container-fluid col-9 border py-1">
+            <form autocomplete="off" class="form-inline form-search" id="form-search-clients-worker">
+                <h3 class="mb-0 mr-1">Filters:</h3>
+                <div class="mx-1 autocomplete">
+                    <input type="text" class="form-control" placeholder="Name" id="search-client-name"/>
+                </div>
+                <div class="mx-1 autocomplete">
+                    <input type="text" class="form-control" placeholder="Post Code" id="search-client-post-code" />
+                </div>
+                <div class="mx-1 autocomplete">
+                    <input type="text" class="form-control" placeholder="City" id="search-client-city" />
+                </div>
+                <button type="submit" class="btn btn-secondary mx-1">Search</button>
+            </form>
+            <form autocomplete="off" class="form-inline form-search" id="form-search-user-worker" style="display: none;">
+                <h3 class="mb-0 mr-1">Filters:</h3>
+                <div class="mx-1 autocomplete">
+                    <input type="text" class="form-control" placeholder="Name" id="search-user-name" />
+                </div>
+                <div class="mx-1 autocomplete">
+                    <input type="text" class="form-control" placeholder="City" id="search-user-city" />
+                </div>
+                <button type="submit" class="btn btn-secondary mx-1">Search</button>
+            </form>
+            <form autocomplete="off" class="form-inline form-search" id="form-search-quotes-worker" style="display: none;">
+                <h3 class="mb-0 mr-1">Filters:</h3>
+                <div class="mx-1 autocomplete">
+                    <input type="text" class="form-control" id="search-quote-client-name" placeholder="Client name" />
+                </div>
+                <div class="form-group mx-1">
+                    <input type="date" id="search-quote-date" class="form-control" />
+                </div>
+                <div class="form-group mx-1">
+                    <input type="text" class="form-control" id="search-quote-min-price" placeholder="Min Price" />
+                </div>
+                <div class="form-group mx-1">
+                    <input type="text" class="form-control" id="search-quote-max-price" placeholder="Max Price" />
+                </div>
+                <div class="form-group mx-1">
+                    <button type="button" class="btn btn-default border dropdown-toggle" data-toggle="dropdown">
+                        <span>Project Types<span class="caret"></span></span>
+                    </button>
+                    <ul class="dropdown-menu" id="menu-search-quote-type">
+                        
+                    </ul>
+                </div>
+                <button type="submit" class="btn btn-secondary mx-1">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container-fluid col-3 border px-0 result-list rtl" id="result-list">
+            <div class="container-fluid border ltr ml-2">
+                <div class="row">
+                    <div class="container-fluid col-9">
+                        <span class="font-weight-bold">Lastname: Honinckx</span>
+                    </div>
+                    <div class="container-fluid col-3 text-right">
+                        <span class="font-weight-bold">#1285</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container-fluid">
+                        <span class="font-weight-bold">Firstname: Antoine</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container-fluid">
+                        <span class="font-weight-bold">E-mail: antoine.honinckx@student.vinci.be</span>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid border ltr ml-2">
+                <div class="row">
+                    <div class="container-fluid col-9">
+                        <span class="font-weight-bold">Pseudo: Antoine356</span>
+                    </div>
+                    <div class="container-fluid col-3 text-right">
+                        <span class="font-weight-bold">#135</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container-fluid">
+                        <span class="font-weight-bold">Lastname: Honinckx</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container-fluid">
+                        <span class="font-weight-bold">Firstname: Antoine</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid col-3 z-back"></div>
+        <div class="container-fluid col-9 border-bottom-0 h-auto details" id="details-client">
+            <div class="row my-3">
+                <div class="container-fluid col-10">
+                    <h2><u>Selected Client's Details:</u></h2>
+                </div>
+                <div class="container-fluid col-2 text-right">
+                    <span class="font-weight-bold" id="details-client-id"></span>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-client-lastname"></span>
+                </div>
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-client-city" ></span>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-client-firstname"></span>
+                </div>
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-client-phone-number"></span>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-client-email"></span>
+                </div>
+                <div class="container col-6 text-center"></div>
+            </div>
+            <div class="row my-5" id="selected-client-quotes">
+                <div class="container-fluid">
+                    <h2><u>Client's Quotes:</u></h2>
+                </div>
+                <div class="container-fluid" id="client-quotes-list">
+                    
+                </div>
+                
+            </div>
+        </div>
+        <div class="container-fluid col-9 border-bottom-0 h-auto details" id="details-user">
+            <div class="row my-3" id="details-user">
+                <div class="container-fluid col-10">
+                    <h2><u>Selected User's Details:</u></h2>
+                </div>
+                <div class="container-fluid col-2 text-right">
+                    <span class="font-weight-bold"><u>ID:</u> #135</span>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-user-id"><u>Pseudo:</u> Antoine356</span>
+                </div>
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-user-email"><u>E-mail:</u> antoine.honinckx@student.vinci.be</span>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-user-lastname"><u>Lastname:</u> Honinckx</span>
+                </div>
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-user-worker"><u>Ouvrier:</u> NON</span>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-user-firstname"><u>Firstname:</u> Introduced</span>
+                </div>
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-user-registration-date"><u>Registration date:</u> 20/06/2020</span>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid col-9 border-bottom-0 h-auto details" id="details-quote">
+            <div class="alert alert-danger notification" role="alert" id="error-dashboard-worker-quote"></div>
+            <div class="alert alert-success notification" role="alert" id="success-dashboard-worker"></div>
+            <div class="row my-3" >
+                <div class="container-fluid col-10">
+                    <h2><u>Selected Quote's Details:</u></h2>
+                </div>
+                <div class="container-fluid col-2 text-right">
+                    <span class="font-weight-bold" id="details-quote-id"><u>ID:</u> #356</span>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-quote-client-name"></span>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-quote-date"><u>Date:</u> 15-06-2020</span>
+                </div>
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-quote-date-start"><u>Start Date:</u> 26-06-2020</span>
+                    <button type="button" class="btn btn-danger m-1" id="btn-delete-start-date">Remove date start</button>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-quote-work-length"><u>Work Length:</u> 10 days</span>
+                </div>
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-quote-price"><u>Total:</u> 630 €</span>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-quote-state"><u>State:</u> Introduced</span>
+                </div>
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold">
+
+                        <form id="form-push-back-date-start-work" >
+                            <u>Date Start Work:</u>
+                            <input type="date" id="quote-date-start-work-input" />
+                            <button type="submit" class="btn btn-secondary btn-sm mb-1">Push Back</button>
+                        </form>
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="container col-6 text-center">
+                    <span class="font-weight-bold" id="details-quote-type"><u>Quote types:</u></span>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="container  text-right">
+                    <span class="font-weight-bold"><u>Favorite Picture:</u></span>
+                    <img id="details-worker-quote-favorite-picture"  class="mw-150px" />
+                </div>
+            </div>
+            <div class="row my-2">
+                <div class="container col-6 text-center">
+                    <div class="row my-3">
+                        <div class="container text-center">
+                            <span class="font-weight-bold"><u>Pictures Before:</u></span>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="container mx-5" id ="details-worker-quote-pictures-before">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="container col-6 text-center">
+                    <div class="row my-3">
+                        <div class="container text-center">
+                            <span class="font-weight-bold"><u>Pictures After:</u></span>
+                        </div>
+                    </div>
+                    <div class="row my-3">
+                        <div class="container mx-5" id="details-worker-quote-pictures-after">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="container col-7">
+                    <button type="button" class="btn btn-primary m-1 btn-state" id="btn-bill-down-payement-sent">Confirm development demand</button>
+                    <button type="button" class="btn btn-primary m-1 btn-state" id="btn-confirm-start-work-date">Confirm Start Work Date</button>
+                    <button type="button" class="btn btn-primary m-1 btn-state" id="btn-bill-mid-work-sent">Bill Mid-Work Sent</button>
+                    <button type="button" class="btn btn-primary m-1 btn-state" id="btn-bill-end-work-sent">Bill End-Work Sent</button>
+                    <button type="button" class="btn btn-primary m-1 btn-state" id="btn-make-quote-visible">Make Quote Visible</button>
+                    <button type="button" class="btn btn-primary m-1" id="btn-validate-picture">Validate</button>
+                    <button type="button" class="btn btn-primary m-1" id="btn-close-quote">Close Quote</button>
+                    <button type="button" class="btn btn-primary m-1" id="btn-add-picture">Add pictures</button>
+                    <button type="button" class="btn btn-danger m-1" id="btn-cancel-quote">Cancel Quote</button>
+
+
+                </div>
+                <div class="container col-5 quote-picture-favorite-after" id="quote-picture-favorite-after"> 
+                    <input type="file" class="custom-file-input" id="quote-add-picture-after" accept="image/*" multiple />
+                    <label class="custom-file-label" for="quote-add-picture-after">Choose images</label>
+                    <button type="button" class="btn btn-success m-1" id="quote-choose-favorite-picture">Choose Favorite Picture</button>
+                    <button type="button" class="btn btn-success m-1" id="quote-validate-favorite-picture">Validate Favorite Picture</button>                
+                </div>
+                <div class="container col-5" id="pictures-after-previews">
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

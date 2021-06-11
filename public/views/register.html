@@ -1,0 +1,88 @@
+<!--Register-->
+<div id="view-register" class="container col-sm-9 col-md-7 col-lg-5 col-xl-4 view mt-5">
+    <div class="card">
+        <article class="card-body">
+            <h4 class="card-title text-center text-dark">Register</h4>
+            <hr/>
+            <div class="alert alert-danger notification" role="alert" id="error-register"></div>
+            <div class="alert alert-success notification" role="alert" id="success-register"></div>
+            <form id="form-register">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </div>
+                        <label for="new-username"></label>
+                        <input id="new-username" name="username" class="form-control"
+                               placeholder="Enter a username" type="text" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                        </div>
+                        <label for="email"></label>
+                        <input id="email" name="email" class="form-control"
+                               placeholder="Enter an email" type="text" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i
+                                    class="fa fa-address-card-o"></i></span>
+                        </div>
+                        <label for="firstname"></label>
+                        <input id="firstname" name="firstname" class="form-control"
+                               placeholder="Enter a firstname" type="text" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i
+                                    class="fa fa-address-card-o"></i></span>
+                        </div>
+                        <label for="lastname"></label>
+                        <input id="lastname" name="lastname" class="form-control"
+                               placeholder="Enter a lastname" type="text" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-home"></i></span>
+                        </div>
+                        <label for="city"></label>
+                        <input id="city" name="city" class="form-control" placeholder="Enter a city"
+                               type="text" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                        </div>
+                        <label for="new-password"></label>
+                        <input id="new-password" name="password" class="form-control"
+                               placeholder="Enter a password" type="password" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                        </div>
+                        <label for="password-confirm"></label>
+                        <input id="password-confirm" name="password-confirm" class="form-control"
+                               placeholder="Confirm the password" type="password" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-secondary btn-block">Register</button>
+                </div>
+            </form>
+        </article>
+    </div>
+</div>
